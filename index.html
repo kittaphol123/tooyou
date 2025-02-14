@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วันวาเลนไทน์</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .letter {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .letter h1 {
+            color: #e74c3c;
+        }
+        .hidden {
+            display: none;
+        }
+        .slideshow {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .slideshow img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        .slideshow img.active {
+            display: block;
+        }
+        audio {
+            margin-top: 20px;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- หน้าแรก: จดหมาย -->
+    <div id="letter" class="letter">
+        <h1>💌 จดหมายถึงคนพิเศษ</h1>
+        <p>คลิกเพื่อเปิดจดหมาย...</p>
+    </div>
+
+    <!-- หน้าที่สอง: สไลเดอร์รูปภาพและเพลง -->
+    <div id="page2" class="hidden">
+        <h1>❤️ Happy Valentine's Day! ❤️</h1>
+        <div class="slideshow">
+            <img src="C:\Users\Admin\Downloads\New folder\img\screenshot.png" alt="รูปภาพ 1" class="active">
+            <img src="C:\Users\Admin\Downloads\New folder\img\dadad.png" alt="รูปภาพ 2">
+            <img src="C:\Users\Admin\Downloads\New folder\img\sss.png" alt="รูปภาพ 3">
+            <h2>อย่าลืมเปิดเพลงฟังด้วย >:b </h2>
+        </div>
+        <p>คลิกเพื่อไปหน้าต่อไป...</p>
+    </div>
+
+        </div>
+
+
+        <audio controls autoplay loop>
+            <source src="C:\Users\Admin\Downloads\New folder\song\9 นาฬิกา ：  SPF [Full Song].mp3" type="audio/mpeg">
+            เบราว์เซอร์ของคุณไม่รองรับเพลง
+        </audio>
+    </div>
+
+    <script>
+     
+        // สไลเดอร์รูปภาพ
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slideshow img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // เปลี่ยนรูปทุก 3 วินาที
+    </script>
+
+    <!-- ฮาร์ตกระพริบ -->
+<div class="heart" style="position: absolute; top: 20px; right: 20px;">
+    <img src="C:\Users\Admin\Downloads\New folder\img\pngegg.png" alt="ฮาร์ต" width="30">
+</div>
+
+<!-- ดาวตก -->
+<div class="star" style="top: 0; left: 10%;">
+    <img src="C:\Users\Admin\Downloads\New folder\img\star-12993_256.gif" alt="ดาว" width="20">
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animation = "fall 4s linear infinite";
+        heart.onclick = function() {
+            const message = document.createElement("div");
+            message.classList.add("message");
+            message.innerText = "มีคนน่ารักกดหัวใจจ 💕";
+            message.style.left = heart.style.left;
+            message.style.top = Math.random() * 50 + "vh";
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 2000);
+        };
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+    }
+    setInterval(createHeart, 500);
+
+</script>
+
+  <!-- หน้าที่สาม: ข้อความพิเศษ -->
+  <div id="page3" class="page hidden">
+    <img src="C:\Users\Admin\Downloads\New folder\img\c2da476cb524f4dea294139e2831ca78.gif" alt="รูปภาพ 1" class="active">
+    <h1>💖 ข้อความนี้ให้คนพิเศษ 💖</h1>
+    <p>สุขสันต์วันวาเลนไทน์น้าาาเว็ปนี้เขียนให้เธอโดยเฉพาะเลยถึงจะไม่ค่อยสวยก็แต่ตั้งใจทำนะ(นั่งมึนกับสคริปไป1ชั่วโมง)รักนะคับจุบุ๊ๆ อย่าลืมเปิดเพลงฟังด้วยย🤍💞 ขอบคุณที่อยู่ข้างกันเสมอน้าาา  💕</p>
+    <h2>ออกเวรมาแล้วอย่าลืมพักผ่อนให้เยอะๆด้วยน้าคั้บเปงห่วงง</h2>
+
+</div>
+
+<script>
+    const letter = document.getElementById('letter');
+    const page2 = document.getElementById('page2');
+    const page3 = document.getElementById('page3');
+
+    letter.addEventListener('click', () => {
+        letter.style.display = 'none';
+        page2.style.display = 'block';
+    });
+
+    page2.addEventListener('click', () => {
+        page2.style.display = 'none';
+        page3.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

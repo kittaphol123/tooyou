@@ -1,0 +1,21 @@
+/* อนิเมชันฮาร์ตกระพริบ */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.heart {
+    animation: blink 1s infinite;
+}
+
+/* อนิเมชันดาวตก */
+@keyframes fallingStar {
+    0% { transform: translateY(-100px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.star {
+    position: absolute;
+    animation: fallingStar 5s linear infinite;
+}
